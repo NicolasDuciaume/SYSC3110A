@@ -13,6 +13,7 @@ public class AddressBook {
         AddressBook addressBook = new AddressBook();
         System.out.println("Address Book");
         addressBook.addBuddy(buddy);
+        addressBook.printBuddy(0);
         addressBook.removeBuddy(0);
     }
 
@@ -27,5 +28,14 @@ public class AddressBook {
             return this.buddyInfo.remove(index);
         }
         return null;
+    }
+
+    public void printBuddy(int index){
+        if (index >= 0 && index < this.buddyInfo.size()){
+            BuddyInfo bud = this.buddyInfo.get(index);
+            System.out.println("Name: " + bud.getName());
+            System.out.println("Address: " + bud.getAddress());
+            System.out.println("Phone number : " + bud.getPhoneNumber());
+        }
     }
 }
